@@ -11,8 +11,9 @@ public class EchoController {
     //dubbo提供的注解
     @Reference(version = "1.0.0")
     private EchoService echoService;
+
     @GetMapping(value = "/echo/{string}")
-    public String echo(@PathVariable String string){
+    public String echo(@PathVariable String string) {
         return echoService.echo(string);
     }
 }
